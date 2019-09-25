@@ -1,0 +1,21 @@
+map_type: costmap
+
+# maximum range (in m) for an obstacle to be put on the costmap
+obstacle_range: 3.0
+# the range we will raytrace freespace (in m) given a sensor reading
+raytrace_range: 3.0
+
+# the delay in transform data that is tolerated (in sec)
+transform_tolerance: 0.2
+
+# 0.2m = 7.87" radius = 15.75" diameter.  May want to use a more accurate square footprint instead.
+robot_radius: 0.4
+# this is the amount (in m) of maximum distance from obstacles for paths
+inflation_radius: 0.01
+# a scaling factor to apply to cost values during inflation (balloons everything up)
+cost_scaling_factor: 0.01
+
+# a list of sensors that are going to be passing information to the costmap (separate by spaces)
+observation_sources: laser_scan_sensor
+# set parameters to above sensors
+laser_scan_sensor: {sensor_frame: hokuyo, data_type: LaserScan, topic: /scan, marking: true, clearing: true}

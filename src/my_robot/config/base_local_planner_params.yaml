@@ -1,0 +1,42 @@
+# freq (in Hz) controller is called
+controller_frequency: 2
+
+TrajectoryPlannerROS:
+  # robot maximum velocity limit in m/s
+  max_vel_x: 5.0
+  # robot minimum velocity limit in m/s			
+  min_vel_x: -0.1
+  # robot maximum rotation velocity in rad/s			
+  max_vel_theta: 6.28319
+
+  # robot minimum rotation velocity in-place in rad/s
+  min_in_place_vel_theta: 6.28319
+
+  # robot rotation acceleration limit in m/s^2
+  acc_lim_theta: 6.28319
+  # robot x acceleration limit in m/s^2		
+  acc_lim_x: 3.0
+  # robot y acceleration limit in m/s^2			
+  acc_lim_y: 3.0
+
+  # robot backup velocity in m/s
+  escape_vel: -0.1
+
+  # amount of time (in sec) to forward-simulate trajectories
+  sim_time: 5.0
+  # number of samples used when exploring the x velocity space			
+  vx_samples: 10.0
+  # number of samples used when exploring the theta velocity space
+  vtheta_samples: 10.0
+
+  # goal_distance and path_distance are in meters (not cells)
+  meter_scoring: true
+  # how much the controller should stay close to a given path (max = 5.0)
+  pdist_scale: 0.1
+  # how much the controller should achieve local goal (max = 5.0)
+  gdist_scale: 0.1
+  # how much the controller should attempt to avoid obstacles
+  occdist_scale: 0.1
+
+  # velocity commands are generated from a non-holonomic robot
+  holonomic_robot: false

@@ -1,0 +1,30 @@
+global_costmap:
+  # defines what coordinate frame the global costmap runs in
+  global_frame: map
+  # the base of the robot coordinate frame for the global costmap to reference
+  robot_base_frame: robot_footprint
+  # how often (in Hz) the global costmap runs its update loop
+  update_frequency: 0.5
+  # rate (in Hz) that the global costmap publishes visualization information
+  publish_frequency: 0.5
+  
+  # NOTE - the below parameters can be overwritten by some layers, namely the static map layer #
+  # the width of the global costmap (in m)
+  width: 15.0
+  # the height of the global costmap (in m)
+  height: 15.0
+  # the resolution of the global costmap (in m/cell)
+  resolution: 0.01
+  # the x origin of the global costmap in the global frame (in m)
+  origin_x: -15.0
+  # the y origin of the global costmap in the global frame (in m)
+  origin_y: -15.0
+
+  # determines whether or not the global costmap should initialize itself based on a map served by map_server
+  static_map: true
+  # use a rolling window version of global costmap (if static_map = true, this must be set to false)
+  # rolling window means it is always centered at the robot
+  rolling_window: false
+
+# padding space for the footprint of the robot
+  footprint_padding: 0.01
